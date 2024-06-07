@@ -20,7 +20,7 @@ const Home = () => {
     if(!localStorage.getItem('token')){
       navigate('/register');
     }
-  },[])
+  },[navigate])
 
 
   const fetchUserDetails=async ()=>{
@@ -49,7 +49,7 @@ const Home = () => {
 
   useEffect(()=>{
     fetchUserDetails();
-  },[])
+  },[dispatch])
 
 
   // socket connetion 
@@ -70,7 +70,7 @@ const Home = () => {
     return ()=>{
       socketConnection.disconnect()
     }
-  },[])
+  },[dispatch])
 
   const basePath=location.pathname==='/';
  
