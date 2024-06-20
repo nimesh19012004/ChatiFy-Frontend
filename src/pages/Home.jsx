@@ -20,7 +20,7 @@ const Home = () => {
     if(!localStorage.getItem('token')){
       navigate('/register');
     }
-  },[navigate])
+  },[])
 
 
   const fetchUserDetails=async ()=>{
