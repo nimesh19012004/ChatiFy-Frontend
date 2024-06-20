@@ -15,12 +15,13 @@ const Home = () => {
   const navigate=useNavigate();
   const location =useLocation();
 
-
-  useEffect(()=>{
-    if(!localStorage.getItem('token')){
+ useEffect(() => {
+    if (!localStorage.getItem('token')) {
       navigate('/register');
+    } else {
+      fetchUserDetails();
     }
-  },[])
+  }, [navigate]);
 
 
   const fetchUserDetails=async ()=>{
